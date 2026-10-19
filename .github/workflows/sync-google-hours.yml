@@ -1,0 +1,96 @@
+name: Sync hours from Google
+
+# Copies Ollie's hours (regular, holiday, and temporarily-closed status) from the Google
+# Business Profile into hours.json. Runs daily at 10am Central. GitHub schedules use UTC and
+# don't follow daylight saving time, so there are two schedules and each one only runs in
+# its half of the year.
+# "Run workflow" on the Actions tab runs it immediately (after changing hours on Google).
+# Needs the GOOGLE_PLACES_API_KEY secret; without it, the job does nothing.
+# When hours change, it opens a pull request for Chris to merge.
+on:
+  schedule:
+    - cron: '0 15 * * *' # 10am Central Daylight Time
+    - cron: '0 16 * * *' # 10am Central Standard Time
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: google-hours-sync
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pick the schedule that matches daylight saving time
+        id: clock
+        env:
+          SCHEDULE: ${{ github.event.schedule }}
+        run: |
+          offset=$(TZ=America/Chicago date +%z)
+          skip=false
+          if [ "$SCHEDULE" = "0 15 * * *" ] && [ "$offset" != "-0500" ]; then skip=true; fi
+          if [ "$SCHEDULE" = "0 16 * * *" ] && [ "$offset" != "-0600" ]; then skip=true; fi
+          echo "skip=$skip" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/checkout@v5
+        if: steps.clock.outputs.skip == 'false'
+
+      - uses: actions/setup-python@v6
+        if: steps.clock.outputs.skip == 'false'
+        with:
+          python-version: "3.12"
+
+      - name: Import hours from Google
+        id: import
+        if: steps.clock.outputs.skip == 'false'
+        env:
+          GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
+        run: |
+          python tools/import_google_hours.py --summary "$RUNNER_TEMP/summary.md"
+          echo "changed=$([ -n "$(git status --porcelain hours.json)" ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
+
+      - name: Check the updated files
+        id: validate
+        if: steps.import.outputs.changed == 'true'
+        run: |
+          set +e
+          python tools/validate.py | tee "$RUNNER_TEMP/validate.txt"
+          echo "ok=$([ "${PIPESTATUS[0]}" = "0" ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
+
+      - name: Open a pull request with the change
+        if: steps.import.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VALID: ${{ steps.validate.outputs.ok }}
+        run: |
+          branch="google-hours-sync-$(TZ=America/Chicago date +%Y-%m-%d-%H%M)"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$branch"
+          git commit -am "Sync hours from Google"
+          git push -u origin "$branch"
+
+          {
+            cat "$RUNNER_TEMP/summary.md"
+            echo
+            if [ "$VALID" != "true" ]; then
+              echo "**The automatic check found problems. Don't merge this; ask Claude to look at it:**"
+              echo '```'
+              cat "$RUNNER_TEMP/validate.txt"
+              echo '```'
+            else
+              echo "The automatic check passed. If the hours above match the Google listing, click **Merge pull request**."
+            fi
+          } > "$RUNNER_TEMP/body.md"
+
+          gh pr create --base main --head "$branch" \
+            --title "Sync hours from Google ($(TZ=America/Chicago date '+%b %-d'))" \
+            --body-file "$RUNNER_TEMP/body.md"
+
+          if [ "$VALID" != "true" ]; then
+            echo "::error::The hours sync found problems. See the open pull request."
+            exit 1
+          fi
