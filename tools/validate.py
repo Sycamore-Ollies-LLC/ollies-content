@@ -67,6 +67,49 @@ for i, s in enumerate(starts):
         problems.append(f"dole.json: week {s} is not 7 days after {starts[i - 1]}")
 print(f"dole.json: {len(weeks)} weeks")
 
+# Hours: filled in daily from the Google listing by tools/import_google_hours.py.
+# An empty "hours" list is allowed until the first sync has run.
+WEEKDAYS = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"]
+HOUR_KEYS = {"updated", "status", "googlePlaceId", "hours", "specialDays", "note"}
+TIME = __import__("re").compile(r"^([01]\d|2[0-3]):[0-5]\d$")
+hours = load("hours.json")
+extra = set(hours) - HOUR_KEYS
+if extra:
+    problems.append(f"hours.json: unknown keys {sorted(extra)}")
+if hours.get("status") not in ("open", "temporarilyClosed"):
+    problems.append(f"hours.json: status {hours.get('status')!r} is not 'open' or 'temporarilyClosed'")
+try:
+    datetime.date.fromisoformat(hours.get("updated", ""))
+except ValueError:
+    problems.append("hours.json: updated is not a YYYY-MM-DD date")
+seen_days = []
+for slot in hours.get("hours", []):
+    days = slot.get("days", [])
+    if not days or any(d not in WEEKDAYS for d in days):
+        problems.append(f"hours.json: slot {slot} has missing or unknown days")
+    seen_days += days
+    if "label" not in slot:
+        if not TIME.match(slot.get("open", "")):
+            problems.append(f"hours.json: slot {slot} has no valid opening time")
+        if "close" in slot and not TIME.match(slot["close"]):
+            problems.append(f"hours.json: slot {slot} has an invalid closing time")
+if len(seen_days) != len(set(seen_days)):
+    problems.append("hours.json: a day appears in more than one slot")
+special = hours.get("specialDays", [])
+for d in special:
+    try:
+        datetime.date.fromisoformat(d.get("date", ""))
+    except ValueError:
+        problems.append(f"hours.json: special day {d} has an invalid date")
+        continue
+    if not isinstance(d.get("closed"), bool):
+        problems.append(f"hours.json: special day {d['date']} needs closed: true or false")
+    elif not d["closed"] and not TIME.match(d.get("open", "")):
+        problems.append(f"hours.json: special day {d['date']} is open but has no valid opening time")
+if [d.get("date") for d in special] != sorted(d.get("date", "") for d in special):
+    problems.append("hours.json: special days are not in date order")
+print(f"hours.json: {len(hours.get('hours', []))} slot(s), {len(special)} special day(s)")
+
 for p in problems:
     print("PROBLEM:", p)
 print(f"{len(problems)} problem(s)")
