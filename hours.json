@@ -1,5 +1,26 @@
 {
   "updated": "2026-10-19",
   "status": "open",
-  "hours": []
+  "hours": [
+    {
+      "days": [
+        "sun",
+        "mon",
+        "tue",
+        "wed",
+        "thu",
+        "fri",
+        "sat"
+      ],
+      "open": "13:00",
+      "close": "21:00"
+    }
+  ],
+  "googlePlaceId": "ChIJmxQX-tErD4gRNX0VeA0n0MM",
+  "specialDays": [
+    {
+      "date": "2026-10-25",
+      "closed": true
+    }
+  ]
 }
