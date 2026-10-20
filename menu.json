@@ -1,0 +1,917 @@
+{
+  "updated": "2026-10-20",
+  "sections": [
+    {
+      "id": "sundaes",
+      "title": "Sundaes",
+      "note": "Whipped cream costs extra unless the sundae includes it. Extra toppings and nuts cost extra.",
+      "items": [
+        {
+          "id": "nacho-sundae",
+          "name": "Nacho Sundae",
+          "description": "Custard on a bed of waffle cone chips. Create your own with 1, 2, or 3 toppings, or more.",
+          "sizes": [
+            {
+              "name": "1 topping",
+              "price": null
+            },
+            {
+              "name": "2 toppings",
+              "price": null
+            },
+            {
+              "name": "3 toppings",
+              "price": null
+            }
+          ],
+          "photos": [
+            "images/menu/nacho-sundae-1.jpg",
+            "images/menu/nacho-sundae-2.jpg",
+            "images/menu/nacho-sundae-3.jpg"
+          ]
+        },
+        {
+          "id": "turtle",
+          "name": "Turtle",
+          "description": "Hot fudge, caramel, and pecans.",
+          "sizes": [
+            {
+              "name": "Regular",
+              "price": null
+            },
+            {
+              "name": "Junior",
+              "price": null
+            }
+          ]
+        },
+        {
+          "id": "raspberry-fudge-truffle",
+          "name": "Raspberry Fudge Truffle",
+          "description": "Hot fudge and raspberries.",
+          "sizes": [
+            {
+              "name": "Regular",
+              "price": null
+            },
+            {
+              "name": "Junior",
+              "price": null
+            }
+          ]
+        },
+        {
+          "id": "strawberry-fudge-truffle",
+          "name": "Strawberry Fudge Truffle",
+          "description": "Hot fudge and strawberries.",
+          "sizes": [
+            {
+              "name": "Regular",
+              "price": null
+            },
+            {
+              "name": "Junior",
+              "price": null
+            }
+          ]
+        },
+        {
+          "id": "strawberry-banana",
+          "name": "Strawberry Banana",
+          "description": "Strawberries and banana.",
+          "sizes": [
+            {
+              "name": "Regular",
+              "price": null
+            },
+            {
+              "name": "Junior",
+              "price": null
+            }
+          ]
+        },
+        {
+          "id": "taffy-apple",
+          "name": "Taffy Apple",
+          "description": "Caramel and apple topping.",
+          "sizes": [
+            {
+              "name": "Regular",
+              "price": null
+            },
+            {
+              "name": "Junior",
+              "price": null
+            }
+          ]
+        },
+        {
+          "id": "butter-pecan",
+          "name": "Butter Pecan",
+          "description": "Butterscotch and pecans.",
+          "sizes": [
+            {
+              "name": "Regular",
+              "price": null
+            },
+            {
+              "name": "Junior",
+              "price": null
+            }
+          ]
+        },
+        {
+          "id": "caramel-pecan",
+          "name": "Caramel Pecan",
+          "description": "Caramel and pecans.",
+          "sizes": [
+            {
+              "name": "Regular",
+              "price": null
+            },
+            {
+              "name": "Junior",
+              "price": null
+            }
+          ]
+        },
+        {
+          "id": "tin-roof",
+          "name": "Tin Roof",
+          "description": "Hot fudge and Spanish peanuts.",
+          "sizes": [
+            {
+              "name": "Regular",
+              "price": null
+            },
+            {
+              "name": "Junior",
+              "price": null
+            }
+          ]
+        },
+        {
+          "id": "smores",
+          "name": "S'mores",
+          "description": "Chocolate custard, graham crackers, and marshmallow.",
+          "sizes": [
+            {
+              "name": "Regular",
+              "price": null
+            },
+            {
+              "name": "Junior",
+              "price": null
+            }
+          ]
+        },
+        {
+          "id": "chocolate-marshmallow",
+          "name": "Chocolate Marshmallow",
+          "description": "Chocolate custard and marshmallow.",
+          "sizes": [
+            {
+              "name": "Regular",
+              "price": null
+            },
+            {
+              "name": "Junior",
+              "price": null
+            }
+          ]
+        },
+        {
+          "id": "snickers-parfait",
+          "name": "Snickers Parfait",
+          "description": "Hot fudge, caramel, chopped nuts, and a mini Snickers bar.",
+          "sizes": [
+            {
+              "name": "One size",
+              "price": null
+            }
+          ]
+        },
+        {
+          "id": "banana-split",
+          "name": "Banana Split",
+          "description": "Banana, chocolate syrup, pineapple, strawberries, chopped nuts, whipped cream, and cherries.",
+          "sizes": [
+            {
+              "name": "One size",
+              "price": null
+            }
+          ]
+        },
+        {
+          "id": "black-forest",
+          "name": "Black Forest",
+          "description": "Hot fudge and old-fashioned cherries.",
+          "sizes": [
+            {
+              "name": "Regular",
+              "price": null
+            },
+            {
+              "name": "Junior",
+              "price": null
+            }
+          ]
+        },
+        {
+          "id": "aloha-banana",
+          "name": "Aloha (Banana)",
+          "description": "Banana, pineapple, and coconut.",
+          "sizes": [
+            {
+              "name": "Regular",
+              "price": null
+            },
+            {
+              "name": "Junior",
+              "price": null
+            }
+          ]
+        },
+        {
+          "id": "aloha-strawberry",
+          "name": "Aloha (Strawberry)",
+          "description": "Strawberries, pineapple, and coconut.",
+          "sizes": [
+            {
+              "name": "Regular",
+              "price": null
+            },
+            {
+              "name": "Junior",
+              "price": null
+            }
+          ]
+        },
+        {
+          "id": "twixster",
+          "name": "Twixster",
+          "description": "Brownies, caramel, and Twix.",
+          "sizes": [
+            {
+              "name": "Regular",
+              "price": null
+            },
+            {
+              "name": "Junior",
+              "price": null
+            }
+          ]
+        },
+        {
+          "id": "black-bird",
+          "name": "Black Bird",
+          "description": "Chocolate custard, banana, hot fudge, and Oreos.",
+          "sizes": [
+            {
+              "name": "Regular",
+              "price": null
+            },
+            {
+              "name": "Junior",
+              "price": null
+            }
+          ]
+        },
+        {
+          "id": "peanut-butter-and-jelly",
+          "name": "Peanut Butter & Jelly",
+          "description": "Peanut butter sauce and strawberries.",
+          "sizes": [
+            {
+              "name": "Regular",
+              "price": null
+            },
+            {
+              "name": "Junior",
+              "price": null
+            }
+          ]
+        },
+        {
+          "id": "harlination",
+          "name": "Harlination",
+          "description": "Caramel, marshmallow, and Kit Kat.",
+          "sizes": [
+            {
+              "name": "Regular",
+              "price": null
+            },
+            {
+              "name": "Junior",
+              "price": null
+            }
+          ]
+        },
+        {
+          "id": "elvis",
+          "name": "Elvis",
+          "description": "Banana, marshmallow, and peanut butter.",
+          "sizes": [
+            {
+              "name": "Regular",
+              "price": null
+            },
+            {
+              "name": "Junior",
+              "price": null
+            }
+          ]
+        },
+        {
+          "id": "rocky-road",
+          "name": "Rocky Road",
+          "description": "Chocolate custard, marshmallow, and almonds.",
+          "sizes": [
+            {
+              "name": "Regular",
+              "price": null
+            },
+            {
+              "name": "Junior",
+              "price": null
+            }
+          ]
+        },
+        {
+          "id": "hedge",
+          "name": "Hedge",
+          "description": "Peanut butter, Oreos, and gummy bears.",
+          "sizes": [
+            {
+              "name": "Regular",
+              "price": null
+            },
+            {
+              "name": "Junior",
+              "price": null
+            }
+          ]
+        },
+        {
+          "id": "huskie",
+          "name": "Huskie",
+          "description": "Strawberries and Oreos.",
+          "sizes": [
+            {
+              "name": "Regular",
+              "price": null
+            },
+            {
+              "name": "Junior",
+              "price": null
+            }
+          ]
+        },
+        {
+          "id": "strawberry-hill",
+          "name": "Strawberry Hill",
+          "description": "Strawberries, marshmallow, and chopped nuts.",
+          "sizes": [
+            {
+              "name": "Regular",
+              "price": null
+            },
+            {
+              "name": "Junior",
+              "price": null
+            }
+          ]
+        },
+        {
+          "id": "raspberry-hill",
+          "name": "Raspberry Hill",
+          "description": "Raspberries, marshmallow, and chopped nuts.",
+          "sizes": [
+            {
+              "name": "Regular",
+              "price": null
+            },
+            {
+              "name": "Junior",
+              "price": null
+            }
+          ]
+        },
+        {
+          "id": "blueberry-hill",
+          "name": "Blueberry Hill",
+          "description": "Blueberries, marshmallow, and chopped nuts.",
+          "sizes": [
+            {
+              "name": "Regular",
+              "price": null
+            },
+            {
+              "name": "Junior",
+              "price": null
+            }
+          ]
+        },
+        {
+          "id": "hot-cookie",
+          "name": "Hot Cookie",
+          "description": "Hot fudge and chocolate chip cookie dough pieces.",
+          "sizes": [
+            {
+              "name": "Regular",
+              "price": null
+            },
+            {
+              "name": "Junior",
+              "price": null
+            }
+          ]
+        },
+        {
+          "id": "red-hot-cookie",
+          "name": "Red Hot Cookie",
+          "description": "Hot fudge, strawberries, and chocolate chip cookie dough pieces.",
+          "sizes": [
+            {
+              "name": "Regular",
+              "price": null
+            },
+            {
+              "name": "Junior",
+              "price": null
+            }
+          ]
+        },
+        {
+          "id": "strawberry-shortcake",
+          "name": "Strawberry Shortcake",
+          "description": "Caramel, strawberries, and graham crackers.",
+          "sizes": [
+            {
+              "name": "Regular",
+              "price": null
+            },
+            {
+              "name": "Junior",
+              "price": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shakes",
+      "title": "Shakes and Blasts",
+      "note": "Shakes, malts, and Arctic Blasts come in any flavor from our toppings list.",
+      "items": [
+        {
+          "id": "arctic-blast",
+          "name": "Arctic Blast",
+          "description": "Custard blended with your choice of toppings.",
+          "sizes": [
+            {
+              "name": "Small (12 oz)",
+              "price": null
+            },
+            {
+              "name": "Regular (16 oz)",
+              "price": null
+            },
+            {
+              "name": "Large (32 oz)",
+              "price": null
+            }
+          ]
+        },
+        {
+          "id": "shake",
+          "name": "Shake",
+          "description": "Made with your choice of flavor from our toppings list.",
+          "sizes": [
+            {
+              "name": "Small (12 oz)",
+              "price": null
+            },
+            {
+              "name": "Regular (16 oz)",
+              "price": null
+            },
+            {
+              "name": "Large (32 oz)",
+              "price": null
+            }
+          ]
+        },
+        {
+          "id": "malt",
+          "name": "Malt",
+          "description": "Made with your choice of flavor from our toppings list.",
+          "sizes": [
+            {
+              "name": "Small (12 oz)",
+              "price": null
+            },
+            {
+              "name": "Regular (16 oz)",
+              "price": null
+            },
+            {
+              "name": "Large (32 oz)",
+              "price": null
+            }
+          ]
+        },
+        {
+          "id": "boston-shake-or-malt",
+          "name": "Boston Shake or Malt",
+          "description": "A shake or malt with a small one-topping sundae on top.",
+          "sizes": [
+            {
+              "name": "One size",
+              "price": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dole",
+      "title": "Dole",
+      "items": [
+        {
+          "id": "dole-soft-serve",
+          "name": "Dole Soft Serve",
+          "description": "Dairy-free, not sugar-free. Two fruit flavors every week, new each Monday. Pints and quarts available.",
+          "sizes": [],
+          "flavors": [
+            "Pineapple",
+            "Raspberry",
+            "Strawberry",
+            "Watermelon",
+            "Mango",
+            "Lemon",
+            "Orange",
+            "Cherry",
+            "Pomegranate",
+            "Lime"
+          ],
+          "photos": [
+            "images/menu/dole-pineapple.jpg",
+            "images/menu/dole-strawberry.jpg",
+            "images/menu/dole-mango.jpg"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pies",
+      "title": "Pies",
+      "note": "All pies need 24 hours' notice. Seasonal pies need 48 hours' notice. We try to keep Turtle Pies on hand.",
+      "items": [
+        {
+          "id": "turtle-pie",
+          "name": "Turtle Pie",
+          "description": "Vanilla custard, hot fudge, caramel, pecans, and 5 cherries.",
+          "sizes": [],
+          "photos": [
+            "images/menu/turtle-pie.jpg"
+          ]
+        },
+        {
+          "id": "strawberry-banana-pie",
+          "name": "Strawberry Banana Pie",
+          "description": "Vanilla custard, banana, and strawberries.",
+          "sizes": []
+        },
+        {
+          "id": "strawberry-fudge-truffle-pie",
+          "name": "Strawberry Fudge Truffle Pie",
+          "description": "Vanilla custard, hot fudge, and strawberries.",
+          "sizes": [],
+          "photos": [
+            "images/menu/strawberry-fudge-truffle-pie.jpg"
+          ]
+        },
+        {
+          "id": "raspberry-fudge-truffle-pie",
+          "name": "Raspberry Fudge Truffle Pie",
+          "description": "Vanilla custard, hot fudge, and raspberries.",
+          "sizes": []
+        },
+        {
+          "id": "taffy-apple-pie",
+          "name": "Taffy Apple Pie",
+          "description": "Vanilla custard, caramel, apple topping, chopped nuts, and 5 cherries.",
+          "sizes": [],
+          "photos": [
+            "images/menu/taffy-apple-pie.jpg"
+          ]
+        },
+        {
+          "id": "hot-fudge-oreo-pie",
+          "name": "Hot Fudge Oreo Pie",
+          "description": "Vanilla custard, hot fudge, Oreos, and 5 cherries.",
+          "sizes": [],
+          "photos": [
+            "images/menu/hot-fudge-oreo-pie.jpg"
+          ]
+        },
+        {
+          "id": "hot-cookie-pie",
+          "name": "Hot Cookie Pie",
+          "description": "Vanilla custard, hot fudge, chocolate chip cookie dough pieces, and cherries.",
+          "sizes": [],
+          "photos": [
+            "images/menu/hot-cookie-pie.jpg"
+          ]
+        },
+        {
+          "id": "black-forest-pie",
+          "name": "Black Forest Pie",
+          "description": "Vanilla custard, hot fudge, and old-fashioned cherries.",
+          "sizes": [],
+          "photos": [
+            "images/menu/black-forest-pie.jpg"
+          ]
+        },
+        {
+          "id": "create-your-own-pie",
+          "name": "Create Your Own Pie",
+          "description": "Up to three toppings. Chocolate syrup doesn't freeze, so it can't be a pie topping.",
+          "sizes": []
+        },
+        {
+          "id": "pumpkin-pie",
+          "name": "Pumpkin Pie",
+          "description": "Pumpkin custard with cinnamon sprinkled on top.",
+          "sizes": [],
+          "available": "September to January"
+        },
+        {
+          "id": "cinnamon-pie",
+          "name": "Cinnamon Pie",
+          "description": "Cinnamon custard with cinnamon sprinkled on top.",
+          "sizes": [],
+          "available": "September to January"
+        },
+        {
+          "id": "peppermint-pie",
+          "name": "Peppermint Pie",
+          "description": "Oreo pie shell, peppermint custard, and peppermint pieces.",
+          "sizes": [],
+          "available": "September to January"
+        },
+        {
+          "id": "hot-fudge-oreo-peppermint-pie",
+          "name": "Hot Fudge Oreo Peppermint Pie",
+          "description": "Oreo pie shell, peppermint custard, hot fudge, Oreos, and peppermint pieces.",
+          "sizes": [],
+          "available": "September to January"
+        }
+      ]
+    },
+    {
+      "id": "pints",
+      "title": "Pints and Quarts",
+      "note": "We recommend putting your pint or quart in a freezer zip-top bag. Frozen custard keeps about 4 to 6 weeks in the freezer.",
+      "items": [
+        {
+          "id": "pints-and-quarts",
+          "name": "Pints and Quarts",
+          "description": "Pre-packed custard to take home, in most of our flavors. Limited quantities, subject to availability.",
+          "sizes": [
+            {
+              "name": "Pint",
+              "price": null
+            },
+            {
+              "name": "Quart",
+              "price": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "floats",
+      "title": "Floats and Sodas",
+      "items": [
+        {
+          "id": "float",
+          "name": "Float",
+          "description": "Vanilla custard in your choice of soda.",
+          "sizes": [
+            {
+              "name": "Small (12 oz)",
+              "price": null
+            },
+            {
+              "name": "Regular (20 oz)",
+              "price": null
+            },
+            {
+              "name": "Large (32 oz)",
+              "price": null
+            }
+          ],
+          "flavors": [
+            "Root Beer (Black Cow)",
+            "Green River (Green Cow)",
+            "Coke",
+            "Diet Coke",
+            "Orange"
+          ]
+        },
+        {
+          "id": "old-fashioned-soda",
+          "name": "Old Fashioned Soda",
+          "description": "Your choice of flavor mixed with vanilla custard and soda water, topped with whipped cream and a cherry.",
+          "sizes": [
+            {
+              "name": "One size",
+              "price": null
+            }
+          ],
+          "flavors": [
+            "Vanilla",
+            "Chocolate",
+            "Strawberry",
+            "Raspberry",
+            "Green River"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "drinks",
+      "title": "Drinks",
+      "items": [
+        {
+          "id": "fountain-soda",
+          "name": "Fountain Soda",
+          "sizes": [
+            {
+              "name": "Small (12 oz)",
+              "price": null
+            },
+            {
+              "name": "Regular (16 oz)",
+              "price": null
+            },
+            {
+              "name": "Large (20 oz)",
+              "price": null
+            },
+            {
+              "name": "Quart (32 oz)",
+              "price": null
+            }
+          ],
+          "flavors": [
+            "Coke",
+            "Diet Coke",
+            "Cherry Coke",
+            "Vanilla Coke",
+            "Root Beer",
+            "Sprite",
+            "Green River",
+            "Orange",
+            "Lemonade"
+          ]
+        },
+        {
+          "id": "slushie-or-shiver",
+          "name": "Slushie or Shiver",
+          "description": "A shiver is a slushie mixed with vanilla custard.",
+          "sizes": [
+            {
+              "name": "Small (12 oz)",
+              "price": null
+            },
+            {
+              "name": "Regular (16 oz)",
+              "price": null
+            },
+            {
+              "name": "Large (20 oz)",
+              "price": null
+            },
+            {
+              "name": "Quart (32 oz)",
+              "price": null
+            }
+          ],
+          "flavors": [
+            "Grape",
+            "Lemon Lime",
+            "Orange",
+            "Cherry",
+            "Strawberry",
+            "Blue Raspberry",
+            "Raspberry",
+            "Pineapple"
+          ]
+        },
+        {
+          "id": "dirty-soda",
+          "name": "Dirty Soda",
+          "sizes": []
+        },
+        {
+          "id": "dirty-alani-energy-drink",
+          "name": "Dirty Alani Energy Drink",
+          "sizes": []
+        },
+        {
+          "id": "frozen-lemonade",
+          "name": "Frozen Lemonade",
+          "sizes": []
+        },
+        {
+          "id": "frozen-apple-cider",
+          "name": "Frozen Apple Cider",
+          "sizes": []
+        },
+        {
+          "id": "bottled-water",
+          "name": "Bottled Water",
+          "sizes": [
+            {
+              "name": "One size",
+              "price": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "treats",
+      "title": "Treats",
+      "items": [
+        {
+          "id": "cookie-custard-sandwich",
+          "name": "Cookie Custard Sandwich",
+          "sizes": []
+        }
+      ]
+    },
+    {
+      "id": "toppings",
+      "title": "Toppings",
+      "note": "Toppings and nuts cost extra. We don't put toppings on top of cones, but you're welcome to get a topping on the side for dipping.",
+      "items": [
+        {
+          "id": "toppings",
+          "name": "Toppings",
+          "sizes": [],
+          "flavors": [
+            "Hot Fudge",
+            "Chocolate Syrup",
+            "Caramel",
+            "Peanut Butter",
+            "Butterscotch",
+            "Strawberry",
+            "Raspberry",
+            "Blueberry",
+            "Pineapple",
+            "Apple",
+            "Banana",
+            "Peach",
+            "Butterfinger",
+            "Whipped Cream",
+            "Pecans",
+            "Cashews",
+            "Spanish Nuts",
+            "Chopped Nuts",
+            "Diced Almonds",
+            "Oreo",
+            "Snickers",
+            "M&M",
+            "Coconut",
+            "Heath",
+            "Andes Mint",
+            "Marshmallow",
+            "Cheesecake Pieces",
+            "Brownies",
+            "Graham Crackers",
+            "Puppy Chow",
+            "Sprinkles",
+            "Chocolate Chip Cookie Dough",
+            "Whoppers",
+            "Crushed Whoppers",
+            "Reese's Peanut Butter Cups",
+            "Chocolate Chunks",
+            "Kit Kat",
+            "Twix",
+            "Nutter Butter",
+            "Nestle Crunch",
+            "Old Fashioned Cherries",
+            "Cotton Candy Sprinkles",
+            "Boba Popping Pearls (Passion Fruit)",
+            "Boba Popping Pearls (Strawberry)"
+          ]
+        }
+      ]
+    }
+  ]
+}
