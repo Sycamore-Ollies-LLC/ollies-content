@@ -110,6 +110,25 @@ if [d.get("date") for d in special] != sorted(d.get("date", "") for d in special
     problems.append("hours.json: special days are not in date order")
 print(f"hours.json: {len(hours.get('hours', []))} slot(s), {len(special)} special day(s)")
 
+# About and links: text and web addresses the app shows, edited by hand.
+about = load("about.json")
+paras = about.get("about", {}).get("paragraphs")
+if not about.get("about", {}).get("title") or not isinstance(paras, list) or not paras or not all(isinstance(x, str) and x.strip() for x in paras):
+    problems.append("about.json: about needs a title and at least one paragraph of text")
+if "@" not in about.get("contact", {}).get("email", "@"):
+    problems.append("about.json: contact email doesn't look like an email address")
+jobs = about.get("jobs")
+if jobs is not None:
+    if not isinstance(jobs.get("hiring"), bool):
+        problems.append("about.json: jobs.hiring must be true or false")
+    if jobs.get("applyUrl") and not jobs["applyUrl"].startswith("https://"):
+        problems.append("about.json: jobs.applyUrl must start with https://")
+links = load("links.json")
+for k, v in links.items():
+    if not isinstance(v, str) or not v.startswith("https://"):
+        problems.append(f"links.json: {k} must be a web address starting with https://")
+print(f"about.json: {len(paras or [])} paragraph(s); links.json: {len(links)} link(s)")
+
 for p in problems:
     print("PROBLEM:", p)
 print(f"{len(problems)} problem(s)")

@@ -1,0 +1,28 @@
+{
+  "about": {
+    "title": "About Ollie's",
+    "paragraphs": [
+      "Ollie's Frozen Custard has been a Sycamore tradition for 40 years, serving fresh frozen custard from our walk-up and drive-through stand on Oakland Drive.",
+      "Frozen custard is richer and denser than ice cream. It's made with egg yolk and at least 10 percent milkfat, and churned with very little air, so every scoop is smooth and creamy.",
+      "Chocolate and Vanilla are made fresh every day, alongside a different Flavor of the Day. Stop by, check the calendar, and find your favorite."
+    ]
+  },
+  "contact": {
+    "email": "olliescustard@gmail.com"
+  },
+  "jobs": {
+    "hiring": true,
+    "summary": "Ollie's is hiring part-time positions. We are not accepting applications for 14 and 15 year olds at this time.",
+    "requirements": [
+      "Open availability on nights and weekends",
+      "Able to work at least 20 hours a week",
+      "Reliable transportation",
+      "Available to work holidays (except the 4th of July)",
+      "Reliable, trustworthy, honest, and a team player",
+      "A great personality and people skills",
+      "Able to work in a fast-paced environment",
+      "Open schedule for spring, summer, and fall (we don't hire for summer only)"
+    ],
+    "applyUrl": "https://form.jotform.com/200268246962054"
+  }
+}
