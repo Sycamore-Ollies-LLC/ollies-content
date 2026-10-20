@@ -14,7 +14,7 @@
     "label": "Seasonal and holiday",
     "title": "Seasonal pie order",
     "description": "Holiday pies, ordered ahead by the posted deadline.",
-    "photo": "images/menu/hot-fudge-oreo-pie.jpg"
+    "photo": null
   },
   "catering": {
     "enabled": true,
