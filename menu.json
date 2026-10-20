@@ -2,6 +2,46 @@
   "updated": "2026-10-20",
   "sections": [
     {
+      "id": "cones",
+      "title": "Cones and Cups",
+      "note": "Choose any flavor. A dish is the same as a cup.",
+      "items": [
+        {
+          "id": "cake-cone",
+          "name": "Cake Cone",
+          "sizes": []
+        },
+        {
+          "id": "waffle-cone",
+          "name": "Waffle Cone",
+          "sizes": []
+        },
+        {
+          "id": "waffle-bowl",
+          "name": "Waffle Bowl",
+          "sizes": []
+        },
+        {
+          "id": "cup-or-dish",
+          "name": "Cup or Dish",
+          "sizes": [
+            {
+              "name": "Baby (5 oz)",
+              "price": null
+            },
+            {
+              "name": "Single (9 oz)",
+              "price": null
+            },
+            {
+              "name": "Sundae Cup (12 oz)",
+              "price": null
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "sundaes",
       "title": "Sundaes",
       "note": "Whipped cream costs extra unless the sundae includes it. Extra toppings and nuts cost extra.",
@@ -9,7 +49,7 @@
         {
           "id": "nacho-sundae",
           "name": "Nacho Sundae",
-          "description": "Custard on a bed of waffle cone chips. Create your own with 1, 2, or 3 toppings, or more.",
+          "description": "Fresh-made custard scoops on a bed of waffle cone chips. Create your own with 1, 2, or 3 toppings, or more.",
           "sizes": [
             {
               "name": "1 topping",
@@ -542,7 +582,20 @@
           "id": "dole-soft-serve",
           "name": "Dole Soft Serve",
           "description": "Dairy-free, not sugar-free. Two fruit flavors every week, new each Monday. Pints and quarts available.",
-          "sizes": [],
+          "sizes": [
+            {
+              "name": "Small (4 to 6 oz)",
+              "price": null
+            },
+            {
+              "name": "Medium (7 to 9 oz)",
+              "price": null
+            },
+            {
+              "name": "Large (10 to 12 oz)",
+              "price": null
+            }
+          ],
           "flavors": [
             "Pineapple",
             "Raspberry",
@@ -815,22 +868,27 @@
         {
           "id": "dirty-soda",
           "name": "Dirty Soda",
-          "sizes": []
+          "sizes": [],
+          "description": "Available in several variations."
         },
         {
           "id": "dirty-alani-energy-drink",
           "name": "Dirty Alani Energy Drink",
-          "sizes": []
+          "sizes": [],
+          "description": "Available in several variations."
         },
         {
           "id": "frozen-lemonade",
           "name": "Frozen Lemonade",
-          "sizes": []
+          "sizes": [],
+          "description": "Available in several sizes."
         },
         {
           "id": "frozen-apple-cider",
           "name": "Frozen Apple Cider",
-          "sizes": []
+          "sizes": [],
+          "description": "Available in several sizes.",
+          "available": "seasonally"
         },
         {
           "id": "bottled-water",
@@ -851,7 +909,13 @@
         {
           "id": "cookie-custard-sandwich",
           "name": "Cookie Custard Sandwich",
-          "sizes": []
+          "sizes": [
+            {
+              "name": "One size",
+              "price": null
+            }
+          ],
+          "description": "A single scoop of custard between two chocolate chip cookies, baked in house."
         }
       ]
     },
