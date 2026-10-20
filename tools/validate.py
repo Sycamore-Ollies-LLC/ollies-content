@@ -129,6 +129,34 @@ for k, v in links.items():
         problems.append(f"links.json: {k} must be a web address starting with https://")
 print(f"about.json: {len(paras or [])} paragraph(s); links.json: {len(links)} link(s)")
 
+# Menu: sections of items, each with sizes and prices. A price of null means "Price coming soon".
+menu = load("menu.json")
+item_ids = []
+for sec in menu.get("sections", []):
+    if not sec.get("id") or not sec.get("title") or not sec.get("items"):
+        problems.append(f"menu.json: section {sec.get('id')!r} needs an id, a title, and at least one item")
+    for it in sec.get("items", []):
+        where = f"menu.json: {sec.get('id')}/{it.get('id')}"
+        item_ids.append(it.get("id"))
+        if not it.get("id") or not it.get("name"):
+            problems.append(f"{where} needs an id and a name")
+        size_names = [sz.get("name") for sz in it.get("sizes", [])]
+        if len(size_names) != len(set(size_names)) or not all(size_names):
+            problems.append(f"{where} has a blank or repeated size name")
+        for sz in it.get("sizes", []):
+            price = sz.get("price")
+            if price is not None and (not isinstance(price, (int, float)) or price < 0 or round(price, 2) != price):
+                problems.append(f"{where} size {sz.get('name')!r} has price {price!r}; use a number like 4.25, or null")
+        for ph in it.get("photos", []):
+            if not ph.startswith("https://") and not os.path.exists(os.path.join(ROOT, ph)):
+                problems.append(f"{where} photo {ph} is not in the repo")
+dupes = sorted({i for i in item_ids if item_ids.count(i) > 1})
+if dupes:
+    problems.append(f"menu.json: repeated item ids {dupes}")
+priced = sum(1 for sec in menu.get("sections", []) for it in sec["items"] for sz in it.get("sizes", []) if sz.get("price") is not None)
+total = sum(len(it.get("sizes", [])) for sec in menu.get("sections", []) for it in sec["items"])
+print(f"menu.json: {len(item_ids)} items, {priced} of {total} sizes priced")
+
 for p in problems:
     print("PROBLEM:", p)
 print(f"{len(problems)} problem(s)")
