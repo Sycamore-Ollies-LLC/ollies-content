@@ -129,6 +129,28 @@ for k, v in links.items():
         problems.append(f"links.json: {k} must be a web address starting with https://")
 print(f"about.json: {len(paras or [])} paragraph(s); links.json: {len(links)} link(s)")
 
+# Forms: each one can be turned on or off. A form that's on needs a web address.
+forms = load("forms.json")
+for k in ("pieEveryday", "pieSeasonal", "catering", "giveBack"):
+    f = forms.get(k)
+    if not isinstance(f, dict):
+        problems.append(f"forms.json: {k} is missing")
+        continue
+    if not isinstance(f.get("enabled"), bool):
+        problems.append(f"forms.json: {k}.enabled must be true or false")
+    url = f.get("url")
+    if url is not None and (not isinstance(url, str) or not url.startswith("https://")):
+        problems.append(f"forms.json: {k}.url must be a web address starting with https://, or null")
+    if f.get("enabled") is True and not url:
+        problems.append(f"forms.json: {k} is turned on but has no web address")
+    photo = f.get("photo")
+    if photo and not photo.startswith("https://") and not os.path.exists(os.path.join(ROOT, photo)):
+        problems.append(f"forms.json: {k} photo {photo} is not in the repo")
+steps = forms.get("giveBack", {}).get("steps", [])
+if not isinstance(steps, list) or not all(isinstance(x, str) and x.strip() for x in steps):
+    problems.append("forms.json: giveBack.steps must be a list of sentences")
+print(f"forms.json: on: {', '.join(k for k, f in forms.items() if isinstance(f, dict) and f.get('enabled') is True) or 'none'}")
+
 # Menu: sections of items, each with sizes and prices. A price of null means "Price coming soon".
 menu = load("menu.json")
 item_ids = []
