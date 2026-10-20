@@ -5,14 +5,16 @@
     "url": null,
     "label": "Any day, 24 hours' notice",
     "title": "Regular pie order",
-    "description": "Any pie from the menu, ready for pickup with 24 hours' notice."
+    "description": "Any pie from the menu, ready for pickup with 24 hours' notice.",
+    "photo": "images/menu/turtle-pie.jpg"
   },
   "pieSeasonal": {
     "enabled": false,
     "url": null,
     "label": "Seasonal and holiday",
     "title": "Seasonal pie order",
-    "description": "Holiday pies, ordered ahead by the posted deadline."
+    "description": "Holiday pies, ordered ahead by the posted deadline.",
+    "photo": "images/menu/hot-fudge-oreo-pie.jpg"
   },
   "catering": {
     "enabled": true,

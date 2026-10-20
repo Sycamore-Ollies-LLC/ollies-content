@@ -143,6 +143,9 @@ for k in ("pieEveryday", "pieSeasonal", "catering", "giveBack"):
         problems.append(f"forms.json: {k}.url must be a web address starting with https://, or null")
     if f.get("enabled") is True and not url:
         problems.append(f"forms.json: {k} is turned on but has no web address")
+    photo = f.get("photo")
+    if photo and not photo.startswith("https://") and not os.path.exists(os.path.join(ROOT, photo)):
+        problems.append(f"forms.json: {k} photo {photo} is not in the repo")
 steps = forms.get("giveBack", {}).get("steps", [])
 if not isinstance(steps, list) or not all(isinstance(x, str) and x.strip() for x in steps):
     problems.append("forms.json: giveBack.steps must be a list of sentences")
