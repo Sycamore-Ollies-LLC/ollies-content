@@ -12,12 +12,21 @@ automatically) before it's merged.
 | `hours.json` | Hours, copied from Ollie's Google listing daily | Automatic. Change hours on Google, not here. |
 | `about.json` | The About Ollie's story, contact email, and job listing shown on the Visit screen | Chris, directly on GitHub or through Claude |
 | `links.json` | Web addresses the app opens (rewards sign-up, catering form, social pages) | Chris or Claude |
+| `forms.json` | The pie order, catering, and Give Back forms: each one's on/off switch, web address, and the short text the app shows | Chris, directly on GitHub or through Claude |
 | `menu.json` | The menu: sections, items, descriptions, sizes, prices, and photos | Chris, through Claude |
 | `images/` | Photos the app shows (menu items now; flavors later) | Claude, from Chris's photos |
 
 To edit `about.json` on GitHub: open the file, click the pencil icon, change the text between
 the quotation marks, and commit to a new branch with a pull request. Each paragraph is one line
 in quotes, separated by commas.
+
+## Turning a form on or off
+
+In `forms.json`, each form has `"enabled": true` (on) or `"enabled": false` (off) and a `"url"`
+(the form's web address). While a pie form is off, the app's Order a Pie screen says online
+orders are coming soon and to call. To turn one on, paste the Google Form's address into `"url"`
+in quotes and change `false` to `true`. The automatic check stops a form from being turned on
+without an address.
 
 ## Updating the menu and prices
 
