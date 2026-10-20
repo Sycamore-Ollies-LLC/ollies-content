@@ -1,0 +1,32 @@
+{
+  "updated": "2026-10-20",
+  "pieEveryday": {
+    "enabled": false,
+    "url": null,
+    "label": "Any day, 24 hours' notice",
+    "title": "Regular pie order",
+    "description": "Any pie from the menu, ready for pickup with 24 hours' notice."
+  },
+  "pieSeasonal": {
+    "enabled": false,
+    "url": null,
+    "label": "Seasonal and holiday",
+    "title": "Seasonal pie order",
+    "description": "Holiday pies, ordered ahead by the posted deadline."
+  },
+  "catering": {
+    "enabled": true,
+    "url": "https://olliesfrozencustard.com/catering/"
+  },
+  "giveBack": {
+    "enabled": true,
+    "url": "https://forms.gle/MYaPdQKVbBCmAc3eA",
+    "headline": "10%",
+    "summary": "of daily sales go to your 501(c)(3) on fundraiser days, Tuesdays and Wednesdays.",
+    "steps": [
+      "Apply with the form, telling us about your organization and the dates that work for you.",
+      "We confirm your date and add it to the flavor calendar.",
+      "Spread the word. Supporters just come to Ollie's on your day, and we send your share after."
+    ]
+  }
+}
