@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-20",
+  "updated": "2026-11-27",
   "status": "open",
   "hours": [
     {
@@ -14,11 +14,5 @@
       "close": "20:00"
     }
   ],
-  "googlePlaceId": "ChIJmxQX-tErD4gRNX0VeA0n0MM",
-  "specialDays": [
-    {
-      "date": "2026-11-26",
-      "closed": true
-    }
-  ]
+  "googlePlaceId": "ChIJmxQX-tErD4gRNX0VeA0n0MM"
 }
